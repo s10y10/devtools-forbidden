@@ -1,20 +1,45 @@
 {
   "name": "devtools-forbidden",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.0.1",
+  "description": "禁用devtools",
   "type": "module",
-  "scripts": {
-    "dev": "vue-tsc --noEmit && vite --host",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+  "files": [
+    "dist",
+    "types"
+  ],
+  "typings": "./types/index.d.ts",
+  "main": "./dist/devtools-forbidden.umd.cjs",
+  "module": "./dist/devtools-forbidden.js",
+  "exports": {
+    ".": {
+      "import": "./dist/devtools-forbidden.js",
+      "require": "./dist/devtools-forbidden.umd.cjs"
+    }
   },
-  "dependencies": {
-    "vue": "^3.2.37"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s10y10/devtools-forbidden.git"
+  },
+  "keywords": [
+    "devtools"
+  ],
+  "author": "s10y10",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s10y10/devtools-forbidden/issues"
+  },
+  "homepage": "https://github.com/s10y10/devtools-forbidden",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "dts": "tsc -d",
+    "preview": "vite preview",
+    "publish": "npm publish --access=public --registry=https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.1.0",
+    "@types/node": "^18.11.17",
     "typescript": "^4.6.4",
-    "vite": "^3.1.0",
-    "vue-tsc": "^0.40.4"
+    "vite": "^3.1.0"
   }
 }
