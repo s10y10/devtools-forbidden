@@ -1,1 +1,5 @@
-export function devtoolsForbidden() {}
+import DevtoolsForbidden from './forbidden';
+
+export function devtoolsForbidden() {
+  new DevtoolsForbidden();
+}

@@ -11,7 +11,7 @@ npm install --save devtools-forbidden
 ## 使用
 
 ```
-import { devtoolsForbidden } from 'devtools-forbidden'
+import  { devtoolsForbidden } from 'devtools-forbidden'
 devtoolsForbidden()
 ```
 
