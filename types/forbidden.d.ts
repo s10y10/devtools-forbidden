@@ -1,7 +1,8 @@
+import type { Options } from './types';
 export default class Forbidden {
-    private _write;
+    private _message;
     private _debugTime;
-    constructor();
+    constructor(options?: Options);
     count(e: Function): Function;
     fire(e: Function): void;
     write(): void;

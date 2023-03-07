@@ -1,9 +1,11 @@
+import type { Options } from './types';
 export default class Forbidden {
-  private _write: string;
+  private _message: string;
   private _debugTime: number;
-  constructor() {
-    this._debugTime = 3e3;
-    this._write = '<h1>该网站禁止使用控制台! 请关掉控制台重新刷新!</h1>';
+  constructor(options: Options = {}) {
+    this._debugTime = 2e3;
+    this._message =
+      options.message || '<h1>该网站禁止使用控制台! 请关掉控制台重新刷新!</h1>';
     this.write = this.write.bind(this);
     this.fire(this.write);
     this.debug();
@@ -30,7 +32,7 @@ export default class Forbidden {
   }
 
   write() {
-    document.body.innerHTML = this._write;
+    document.body.innerHTML = this._message;
   }
 
   debug() {
