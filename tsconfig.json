@@ -13,7 +13,7 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "declaration": true,
-    "emitDeclarationOnly": true,
+    "noEmit": true,
     "declarationDir": "types"
   },
   "include": ["lib", "vite-env.d.ts"]

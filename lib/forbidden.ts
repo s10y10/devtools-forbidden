@@ -3,9 +3,10 @@ export default class Forbidden {
   private _message: string;
   private _debugTime: number;
   constructor(options: Options = {}) {
-    this._debugTime = 2e3;
+    this._debugTime = options.debugTime || 2e3;
     this._message =
-      options.message || '<h1>该网站禁止使用控制台! 请关掉控制台重新刷新!</h1>';
+      options.message ||
+      '<h1>该网站禁止使用控制台! 请关掉控制台后刷新页面！</h1>';
     this.write = this.write.bind(this);
     this.fire(this.write);
     this.debug();
@@ -37,6 +38,7 @@ export default class Forbidden {
 
   debug() {
     var e = new Function('debugger');
+    e();
     setInterval(e, this._debugTime);
   }
 }
